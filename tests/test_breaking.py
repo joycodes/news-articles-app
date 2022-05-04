@@ -11,8 +11,8 @@ class KeywordTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_breaking = Breaking('A massive Bitcoin event is coming next week. Here’s what you need to know.',
-                                     'https://abcnews.go.com', 'https://mashable.com/article/bitcoin-halving-2020/')
+        self.new_breaking = Breaking('El cargador universal USB-C al fin tiene fecha: la Unión Europea da otro paso hacia su implantación.',
+                                     'https://www.abcnews.com', 'https://www.xataka.com/accesorios/cargador-universal-usb-c-al-fin-tiene-fecha-union-europea-da-otro-paso-su-implantacion')
 
     def test_instance(self):
         '''
@@ -25,8 +25,8 @@ class KeywordTest(unittest.TestCase):
         Test initialization test case to test if the object is initialized properly
         '''
         self.assertEqual(self.new_breaking.title,
-                         'A massive Bitcoin event is coming next week. Here’s what you need to know.')
-        self.assertEqual(self.new_breaking.imageurl, 'https://abcnews.go.com')
+                         'El cargador universal USB-C al fin tiene fecha: la Unión Europea da otro paso hacia su implantación.')
+        self.assertEqual(self.new_breaking.imageurl, 'https://www.abcnews.com')
 
 
 if __name__ == '__main__':
