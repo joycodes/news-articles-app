@@ -24,6 +24,9 @@ To make advancements/modifications, follow these steps:
 - Push to the branch (`git push origin improve-feature`)
 - Create a Pull Request
 
+## Installation requirements
+You don't need to install anything you only need internet connection
+
 ## Technologies Used
 
 Technologies used to develop this application:
