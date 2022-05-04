@@ -1,49 +1,40 @@
-class Articles:
+import os
+
+
+class Config:
     '''
-    Articles class to define Article objects
+    General configuration parent class
     '''
+    NEWS_API_BASE_URL = 'http://newsapi.org/v2/sources?&apiKey={}'
+    NEWS_API_TOP_ARTICLES_BASE_URL = 'http://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+    NEWS_API_SEARCH_KEYWORD_BASE_URL = 'https://newsapi.org/v2/everything?q={}&sortBy=relevancy,publishedAt&pageSize=30&apiKey={}'
+    NEWS_API_BREAKING_NEWS_BASE_URL = 'http://newsapi.org/v2/top-headlines?country=us&category=general&apiKey={}'
+    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
-    def __init__(self, author, title, imageurl, publishedAt, url):
-        self.author = author
-        self.title = title
-        self.imageurl = imageurl
-        self.publishedAt = publishedAt
-        self.url = url
 
-
-class Breaking:
+class ProdConfig(Config):
     '''
-    Articles class to define Article objects
+    Production  configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
     '''
-
-    def __init__(self, title, imageurl, url):
-        self.title = title
-        self.imageurl = imageurl
-        self.url = url
+    pass
 
 
-class Keyword:
+class DevConfig(Config):
     '''
-    Articles class to define Article objects
-    '''
+    Development  configuration child class
 
-    def __init__(self, author, title, imageurl, publishedAt, url):
-        self.author = author
-        self.title = title
-        self.imageurl = imageurl
-        self.publishedAt = publishedAt
-        self.url = url
-
-
-class Sources:
-    '''
-    Sources class to define Sources Objects
+    Args:
+        Config: The parent configuration class with General configuration settings
     '''
 
-    def __init__(self, id, name, description, url, category, language):
-        self.id = id
-        self.name = name
-        self.description = description
-        self.url = url
-        self.category = category
-        self.language = language
+    DEBUG = True
+
+
+config_options = {
+    'development': DevConfig,
+    'production': ProdConfig
+}
