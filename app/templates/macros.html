@@ -1,0 +1,25 @@
+{% macro displayNewsSources(news_sources) %} {% for item in news_sources %}
+<p class="pb-2 links" 
+><a href="/source/{{item.id}}">{{item.name}}</a></p>
+
+{% endfor %} {% endmacro %} 
+{% macro displayNews(news_items) %}
+{% for item in news_items %} {% if item.urlToImage %}
+<div class="box">
+    <div class="view overlay z-depth-1-half image">
+        <img
+            src="{{item.urlToImage}}"
+            class="img-fluid img-responsive"
+        />
+    </div>
+    <h4 class="my-4 font-weight-bold">{{item.title|truncate(80)}}</h4>
+    <p class="grey-text description">{{item.description|truncate(130)}}</p>
+    <p>
+        by <a><strong>{{item.author}}</strong></a
+        >, {{item.publishedAt}}
+    </p>
+    <a href="{{item.url}}" target="_blank" class="btn btn-primary btn-md">Read more</a>
+
+</div>
+
+{% endif %} {% endfor %} {% endmacro %}

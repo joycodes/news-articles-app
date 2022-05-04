@@ -1,0 +1,36 @@
+{% import 'macros.html' as macro %}
+{% extends 'base.html' %}
+
+ {% block styles%} 
+ {{super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="container col-md-1 mb-12">
+            <div class="sidebar-sticky">
+                <nav class="d-none d-md-block sidebar" style="background-color: #fff;">
+                    <h4 class="text-muted" 
+                    style="color:#333;border-bottom: .1rem solid #333;padding-bottom: .3rem;margin-bottom: 4rem;"
+                    >Sources</h4>
+                    {{ macro.displayNewsSources(sources) }}
+                </nav>
+            </div>
+        </div>
+        <!--Grid column-->
+        <div class="col-lg-11 col-md-11 mb-12">
+            <h1 class="my-1" style="text-align: center;">Trending ..</h1>
+            <hr class="my-3">
+            <div class="box-container">
+                {{ macro.displayNews(others) }}
+            </div>          
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
