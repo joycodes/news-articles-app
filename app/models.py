@@ -1,49 +1,19 @@
-class Articles:
-    '''
-    Articles class to define Article objects
-    '''
 
-    def __init__(self, author, title, imageurl, publishedAt, url):
+class News:
+
+    def __init__(self, author, title, description, url, urlToImage, publishedAt):
         self.author = author
         self.title = title
-        self.imageurl = imageurl
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
         self.publishedAt = publishedAt
-        self.url = url
-
-
-class Breaking:
-    '''
-    Articles class to define Article objects
-    '''
-
-    def __init__(self, title, imageurl, url):
-        self.title = title
-        self.imageurl = imageurl
-        self.url = url
-
-
-class Keyword:
-    '''
-    Articles class to define Article objects
-    '''
-
-    def __init__(self, author, title, imageurl, publishedAt, url):
-        self.author = author
-        self.title = title
-        self.imageurl = imageurl
-        self.publishedAt = publishedAt
-        self.url = url
 
 
 class Sources:
-    '''
-    Sources class to define Sources Objects
-    '''
-
-    def __init__(self, id, name, description, url, category, language):
+    def __init__(self, id, name, url, country, description):
         self.id = id
         self.name = name
-        self.description = description
         self.url = url
-        self.category = category
-        self.language = language
+        self.country = country
+        self.description = description

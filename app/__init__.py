@@ -1,27 +1,19 @@
-from flask import Flask
-from config import config_options
-from flask_bootstrap import Bootstrap
 
-# Initializing Flask Extensions
-bootstrap = Bootstrap()
+class News:
+
+    def __init__(self, author, title, description, url, urlToImage, publishedAt):
+        self.author = author
+        self.title = title
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
 
 
-def create_app(config_name):
-
-    app = Flask(__name__)
-
-    # Creating the app configurations
-    app.config.from_object(config_options[config_name])
-
-    # Initializing flask extensions
-    bootstrap.init_app(app)
-
-    # Registering the blueprint
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-
-    # setting config
-    from .request import configure_request
-    configure_request(app)
-
-    return app
+class Sources:
+    def __init__(self, id, name, url, country, description):
+        self.id = id
+        self.name = name
+        self.url = url
+        self.country = country
+        self.description = description
