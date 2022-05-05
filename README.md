@@ -44,6 +44,6 @@ Technologies used to develop this application:
 
 ## License
 
-[license](/LICENSE)
+[License](https://github.com/joycodes/news-articles-app/blob/25091bd306b2635c0cdc81b26678baa054dc2cc1/LICENSE)
 
 Copyright (c) 2022 [Joyce Nguttu](https://github.com/joycodes)
