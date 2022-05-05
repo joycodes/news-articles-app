@@ -8,9 +8,14 @@
 
 The application consumes the [NewsAPI](https://newsapi.org/) hence the application provides the following functionalities to users:
 
-- View top stories. These are displayed on the landing page in carousel form. Each carousel item has a clickable link that allows the user to read the top story's article.
+- View trending stories. These are displayed on the landing page. Each carousel item has a clickable link that allows the user to read the trending story's article.
 - Have access to news sources. The user has access to over 50 news sources of various categories. These are displayed on the landing page in card format for each news source.
-- Search for articles from all around the world. The user can search for an article by keyword.
+- Search for articles from all around the world. 
+
+![image](./app/static/images/Landing page.png)
+
+## Live link
+Visit the application on https://news-today10.herokuapp.com/ .
 
 ## Development
 
@@ -39,6 +44,6 @@ Technologies used to develop this application:
 
 ## License
 
-MIT LICENCE
+[license](/LICENSE)
 
 Copyright (c) 2022 [Joyce Nguttu](https://github.com/joycodes)
